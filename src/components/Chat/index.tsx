@@ -1,7 +1,8 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { useContext } from "react";
 import { Context } from "../..";
+import { messageCollection } from "../../constants";
 import {
   addDoc,
   collection,
@@ -17,12 +18,12 @@ export const Chat = () => {
   const { auth, firestore } = useContext(Context);
   const [user] = useAuthState(auth);
   const [messages] = useCollectionData(
-    query(collection(firestore, "messages"), orderBy("time"))
+    query(collection(firestore, messageCollection), orderBy("time"))
   );
   const [text, setText] = useState<string>("");
 
   const sendMessage = async () => {
-    await addDoc(collection(firestore, "messages"), {
+    await addDoc(collection(firestore, messageCollection), {
       uid: user?.uid,
       name: user?.displayName,
       avatar: user?.photoURL,
