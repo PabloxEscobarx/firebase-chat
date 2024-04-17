@@ -1,0 +1,30 @@
+.chatPage {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.messagesWrapper {
+  margin: 0 auto;
+  width: 500px;
+}
+.messagesList {
+  height: 100%;
+  max-height: 500px;
+  min-height: 500px;
+  border: 1px solid black;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  padding: 5px;
+  overflow: auto;
+}
+
+.inputChat,
+.btnSend {
+  width: 100%;
+}
+
+.inputs {
+  display: flex;
+  gap: 15px;
+}

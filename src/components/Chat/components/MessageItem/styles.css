@@ -1,0 +1,12 @@
+.messageItemWrapper {
+  border: 1px solid black;
+  border-radius: 5px;
+  width: 100%;
+  max-width: 200px;
+  padding: 5px;
+}
+
+.messageItemWrapper .logo {
+  width: 20px;
+  border-radius: 50%;
+}
